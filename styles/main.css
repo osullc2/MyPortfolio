@@ -73,6 +73,127 @@ p { margin: 0 0 var(--space-4); color: var(--color-muted); }
 section { padding: var(--space-7) 0; }
 header, footer { background: transparent; }
 
+/* Hero Section */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: var(--space-8) 0;
+  background: linear-gradient(135deg, var(--color-bg) 0%, #0f1420 100%);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+  background: linear-gradient(135deg, var(--color-text) 0%, var(--color-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: var(--step-2);
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-bottom: var(--space-4);
+}
+
+.hero-description {
+  font-size: var(--step-1);
+  line-height: 1.7;
+  margin-bottom: var(--space-6);
+  max-width: 500px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-photo {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-1);
+  transition: transform 0.3s ease;
+}
+
+.hero-photo:hover {
+  transform: translateY(-4px);
+}
+
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-1);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  border-color: var(--color-accent);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+  background: var(--color-surface);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+/* Mobile hero styles */
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    text-align: center;
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+  
+  .hero-photo {
+    max-width: 300px;
+  }
+}
+
 /* Header & Navigation */
 header nav { 
   position: sticky; 
