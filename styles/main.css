@@ -1,7 +1,82 @@
-/* Global styles, tokens, and layout will be added in a later step */
+/* Design tokens */
+:root {
+  /* Colors */
+  --color-bg: #0b0d12;
+  --color-surface: #121621;
+  --color-text: #e6e9ef;
+  --color-muted: #9aa3b2;
+  --color-accent: #6fd3ff; /* cyan */
+  --color-accent-2: #b49bff; /* purple */
+  --color-border: #233044;
 
-/* Temporary base to avoid unstyled text flashes */
+  /* Typography */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  --step--2: 0.79rem;
+  --step--1: 0.89rem;
+  --step-0: 1rem;
+  --step-1: 1.12rem;
+  --step-2: 1.26rem;
+  --step-3: 1.42rem;
+  --step-4: 1.6rem;
+  --step-5: 1.8rem;
+  --step-6: 2.03rem;
+  --step-7: 2.28rem;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  /* Layout */
+  --container-max: 1120px;
+  --radius-1: 8px;
+  --radius-2: 12px;
+  --shadow-1: 0 6px 24px rgba(0,0,0,0.24);
+}
+
+/* Reset & base */
 html { box-sizing: border-box; }
 *, *::before, *::after { box-sizing: inherit; }
-body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+* { min-width: 0; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  color: var(--color-text);
+  background: radial-gradient(1200px 800px at 80% -10%, #1a2030 0%, var(--color-bg) 50%), var(--color-bg);
+}
+
+img, svg, video { display: block; max-width: 100%; height: auto; }
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+
+/* Containers */
+.container {
+  width: min(100% - 2rem, var(--container-max));
+  margin-inline: auto;
+}
+
+/* Typography helpers */
+h1, h2, h3 { line-height: 1.2; margin: 0 0 var(--space-4); }
+h1 { font-size: clamp(2rem, 4vw + 1rem, 3rem); }
+h2 { font-size: clamp(1.5rem, 2.2vw + 1rem, 2.2rem); }
+h3 { font-size: clamp(1.2rem, 1.5vw + 1rem, 1.6rem); }
+p { margin: 0 0 var(--space-4); color: var(--color-muted); }
+
+/* Section base (to be expanded later) */
+section { padding: var(--space-7) 0; }
+header, footer { background: transparent; }
+
+/* Nav quick baseline (full styles later) */
+header nav { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(140%) blur(8px); background: color-mix(in oklab, var(--color-bg) 85%, transparent); border-bottom: 1px solid var(--color-border); }
+.nav-brand a { display: inline-flex; align-items: center; gap: var(--space-3); padding: var(--space-4); font-weight: 600; letter-spacing: 0.2px; }
+.nav-links { list-style: none; display: flex; gap: var(--space-2); padding: var(--space-4); margin: 0; }
+.nav-links a { padding: 0.5rem 0.75rem; border-radius: var(--radius-1); }
+.nav-links a:hover { background: #0f1420; color: var(--color-accent); }
 
