@@ -1,0 +1,7 @@
+/* Global styles, tokens, and layout will be added in a later step */
+
+/* Temporary base to avoid unstyled text flashes */
+html { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+
