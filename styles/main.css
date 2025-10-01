@@ -278,6 +278,18 @@ header, footer { background: transparent; }
   border: 0;
 }
 
+/* About Section */
+.school-logo {
+  width: 80px;
+  height: auto;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.school-logo:hover {
+  opacity: 1;
+}
+
 /* Responsive utilities */
 @media (max-width: 768px) {
   .grid-2,
@@ -296,6 +308,10 @@ header, footer { background: transparent; }
   
   .timeline-item {
     padding-left: var(--space-4);
+  }
+  
+  .school-logo {
+    width: 60px;
   }
 }
 
