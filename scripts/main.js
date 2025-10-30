@@ -231,6 +231,47 @@ function renderContact() {
   `;
 }
 
+// Scrollspy and section reveal
+function debounce(fn, wait = 30) {
+  let t; return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
+}
+
+function onScrollSpy() {
+  const sections = document.querySelectorAll('main section');
+  let scrollPos = window.scrollY + 84;
+  let found = false;
+  sections.forEach(section => {
+    if (!found && section.offsetTop <= scrollPos && scrollPos < section.offsetTop + section.offsetHeight) {
+      const id = section.getAttribute('id');
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === `#${id}`);
+      });
+      found = true;
+    }
+  });
+  if (!found) {
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  }
+}
+
+function onReveal() {
+  document.querySelectorAll('main section').forEach(section => {
+    if (section.getBoundingClientRect().top < window.innerHeight - 100) {
+      section.classList.add('is-visible');
+    } else {
+      section.classList.remove('is-visible');
+    }
+  });
+}
+
+function setupInteractivity() {
+  // Mark all as reveal targets
+  document.querySelectorAll('main section').forEach(s => s.classList.add('js-reveal'));
+  window.addEventListener('scroll', debounce(() => { onScrollSpy(); onReveal(); }, 30));
+  onScrollSpy();
+  onReveal();
+}
+
 // Mobile navigation toggle
 document.addEventListener('DOMContentLoaded', function() {
   const navToggle = document.querySelector('.nav-toggle');
@@ -272,5 +313,6 @@ document.addEventListener('DOMContentLoaded', function() {
   renderExperience();
   renderActivities();
   renderContact(); // Add this call
+  setupInteractivity(); // Add
 });
 

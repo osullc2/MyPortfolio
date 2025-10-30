@@ -40,7 +40,7 @@
 }
 
 /* Reset & base */
-html { box-sizing: border-box; }
+html { box-sizing: border-box; scroll-behavior: smooth; }
 *, *::before, *::after { box-sizing: inherit; }
 * { min-width: 0; }
 body {
@@ -530,7 +530,7 @@ header nav {
 
 .nav-links a.active {
   color: var(--color-accent);
-  background: #0f1420;
+  background: #151927;
 }
 
 /* Mobile navigation toggle */
@@ -640,4 +640,9 @@ header nav {
   .contact-card { padding: var(--space-4); }
   .contact-row { flex-direction: column; gap: var(--space-2); }
 }
+
+html { scroll-behavior: smooth; }
+
+.js-reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s cubic-bezier(.23,1.02,.58,1),transform 0.7s cubic-bezier(.23,1.02,.58,1); }
+.js-reveal.is-visible { opacity: 1; transform: none; }
 
