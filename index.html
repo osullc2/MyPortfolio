@@ -14,7 +14,7 @@
       <nav class="container">
         <div class="nav-brand">
           <a href="#hero">
-            <img src="Images/logo-placeholder.png" alt="Colin O'Sullivan" class="nav-logo" />
+            <img src="Images/logo-placeholder.svg" alt="Colin O'Sullivan" class="nav-logo" />
             <span>Colin O'Sullivan</span>
           </a>
         </div>
@@ -52,7 +52,7 @@
               </div>
             </div>
             <div class="hero-image">
-              <img src="Images/colin-photo.jpg" alt="Colin O'Sullivan" class="hero-photo" />
+              <img src="Images/colin-photo.svg" alt="Colin O'Sullivan" class="hero-photo" />
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@
                 <p>Dean's List Student</p>
                 <p>Expected Graduation: May 2026</p>
                 <div class="mt-4">
-                  <img src="Images/rpi-logo.png" alt="RPI Logo" class="school-logo" />
+                  <img src="Images/rpi-logo.svg" alt="RPI Logo" class="school-logo" />
                 </div>
               </div>
             </div>
@@ -179,7 +179,26 @@
     </main>
 
     <footer>
-      <!-- Footer content will be added later -->
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="Images/logo-placeholder.svg" alt="Colin O'Sullivan" class="nav-logo" />
+          <span>Colin O'Sullivan</span>
+        </div>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#activities">Activities</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="footer-meta">
+          <span>© <span id="year"></span> Colin O'Sullivan. All rights reserved.</span>
+        </div>
+      </div>
+      <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+      </script>
     </footer>
 
     <script src="scripts/main.js"></script>

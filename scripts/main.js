@@ -4,7 +4,7 @@ const projectsData = [
     title: "Wordle Network Programming",
     subtitle: "C • POSIX Threads • TCP",
     description: "Single-process, multi-threaded TCP server for the Wordle game using POSIX threads, custom app-layer protocol, and dynamic memory management with synchronization.",
-    image: "Images/project-wordle.png",
+    image: "Images/project-wordle.svg",
     imageAlt: "Wordle Network Programming project",
     badges: ["C", "Pthreads", "Networking"]
   },
@@ -12,7 +12,7 @@ const projectsData = [
     title: "Epidemic Spread Simulation",
     subtitle: "Java • Multithreading • Graphs",
     description: "Multithreaded simulation of infection spread on large graphs with real-time stats, configurable parameters, and multiple infection strategies (random, degree-based, BFS).",
-    image: "Images/project-epidemic.png",
+    image: "Images/project-epidemic.svg",
     imageAlt: "Epidemic Spread Simulation project",
     badges: ["Java", "Graphs", "Concurrency"]
   },
@@ -20,7 +20,7 @@ const projectsData = [
     title: "EastieUnits.com (In-Progress)",
     subtitle: "React • Node.js/Express",
     description: "Website for a property management company to showcase available units and streamline communication between tenants and the property manager. Est. completion: Spring 2026.",
-    image: "Images/project-eastieunits.png",
+    image: "Images/project-eastieunits.svg",
     imageAlt: "EastieUnits.com web app",
     badges: ["React", "Express", "Node.js"]
   }
@@ -54,7 +54,7 @@ const experienceData = [
     title: "Software Engineer Intern",
     company: "Charles River Development, State Street",
     period: "June – August 2025",
-    logo: "Images/crd-logo.png",
+    logo: "Images/crd-logo.svg",
     logoAlt: "Charles River Development logo",
     points: [
       "Contributed to migration toward a next-gen open-source automated testing framework safeguarding systems managing $50T+ in assets.",
@@ -67,7 +67,7 @@ const experienceData = [
     title: "Software Engineer Intern",
     company: "Ultimate Kronos Group (UKG)",
     period: "January – April 2025",
-    logo: "Images/ukg-logo.png",
+    logo: "Images/ukg-logo.svg",
     logoAlt: "UKG logo",
     points: [
       "Built and optimized UI components and backend services powering core product features.",
@@ -79,7 +79,7 @@ const experienceData = [
     title: "Server, Food Runner",
     company: "Osteria Nino Restaurant",
     period: "August 2020 – August 2024",
-    logo: "Images/osteria-nino-logo.png",
+    logo: "Images/osteria-nino-logo.svg",
     logoAlt: "Osteria Nino logo",
     points: [
       "Delivered high-quality service at a high-end Italian restaurant in a fast-paced environment."
@@ -113,9 +113,9 @@ const contactData = {
   location: "Reading, MA",
   phone: "(781)-779-7181",
   email: "colinosullivan013@gmail.com",
-  locationIcon: "Images/location-icon.png", // placeholder path
-  phoneIcon: "Images/phone-icon.png",
-  emailIcon: "Images/email-icon.png"
+  locationIcon: "Images/location-icon.svg", // placeholder path
+  phoneIcon: "Images/phone-icon.svg",
+  emailIcon: "Images/email-icon.svg"
 };
 
 // Render functions

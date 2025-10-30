@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#0f1420"/>
+  <rect x="140" y="120" width="520" height="220" rx="12" fill="#121621" stroke="#233044"/>
+  <rect x="170" y="150" width="200" height="60" rx="8" fill="#233044"/>
+  <rect x="170" y="230" width="460" height="80" rx="8" fill="#233044"/>
+  <text x="400" y="360" font-size="24" text-anchor="middle" fill="#6fd3ff">Project Image Placeholder</text>
+</svg>
+

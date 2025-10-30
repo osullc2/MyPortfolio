@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="12" fill="#121621"/>
+  <circle cx="40" cy="60" r="20" fill="#6fd3ff"/>
+  <rect x="60" y="40" width="20" height="40" rx="4" fill="#6fd3ff"/>
+  <circle cx="90" cy="60" r="10" fill="#6fd3ff"/>
+  <text x="60" y="110" font-size="14" text-anchor="middle" fill="#9aa3b2">UKG</text>
+</svg>
+

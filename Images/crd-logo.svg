@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="12" fill="#121621"/>
+  <rect x="24" y="24" width="72" height="72" rx="8" fill="#6fd3ff"/>
+  <text x="60" y="66" font-size="20" text-anchor="middle" fill="#0b0d12">CRD</text>
+</svg>
+
