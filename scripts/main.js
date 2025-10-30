@@ -280,29 +280,63 @@ document.addEventListener('DOMContentLoaded', function() {
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', function() {
       const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-      
+
       navToggle.setAttribute('aria-expanded', !isExpanded);
       navLinks.classList.toggle('open');
-      
-      // Prevent body scroll when menu is open
       document.body.style.overflow = !isExpanded ? 'hidden' : '';
+
+      // Focus trap for accessibility (mobile menu)
+      if (!isExpanded) {
+        // Delay focus so animation/DOM updates
+        setTimeout(() => {
+          const links = navLinks.querySelectorAll('a');
+          if (links.length) links[0].focus();
+        }, 250);
+        document.addEventListener('keydown', navFocusTrap);
+        document.addEventListener('mousedown', clickOutsideNav);
+      } else {
+        document.removeEventListener('keydown', navFocusTrap);
+        document.removeEventListener('mousedown', clickOutsideNav);
+      }
     });
-    
-    // Close menu when clicking on links
+
+    // Focus trap function
+    function navFocusTrap(e) {
+      if (!navLinks.classList.contains('open')) return;
+      const focusable = Array.from(navLinks.querySelectorAll('a'));
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length-1];
+      if (e.key === 'Tab') {
+        if (e.shiftKey && document.activeElement === first) {
+          last.focus(); e.preventDefault();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          first.focus(); e.preventDefault();
+        }
+      } else if (e.key === 'Escape') {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Close on click outside
+    function clickOutsideNav(e) {
+      if (!navLinks.classList.contains('open')) return;
+      if (!navLinks.contains(e.target) && e.target !== navToggle) {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
     navLinks.addEventListener('click', function(e) {
       if (e.target.tagName === 'A') {
         navToggle.setAttribute('aria-expanded', 'false');
         navLinks.classList.remove('open');
         document.body.style.overflow = '';
-      }
-    });
-    
-    // Close menu on escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
-        navToggle.setAttribute('aria-expanded', 'false');
-        navLinks.classList.remove('open');
-        document.body.style.overflow = '';
+        document.removeEventListener('keydown', navFocusTrap);
+        document.removeEventListener('mousedown', clickOutsideNav);
       }
     });
   }
