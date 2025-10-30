@@ -108,6 +108,16 @@ const activitiesData = [
   }
 ];
 
+const contactData = {
+  name: "Colin O’Sullivan",
+  location: "Reading, MA",
+  phone: "(781)-779-7181",
+  email: "colinosullivan013@gmail.com",
+  locationIcon: "Images/location-icon.png", // placeholder path
+  phoneIcon: "Images/phone-icon.png",
+  emailIcon: "Images/email-icon.png"
+};
+
 // Render functions
 function renderProjects() {
   const container = document.querySelector('#projects .grid');
@@ -195,6 +205,32 @@ function renderActivities() {
   `).join('');
 }
 
+function renderContact() {
+  const el = document.getElementById('contact-info');
+  if (!el) return;
+  el.innerHTML = `
+    <div class="card contact-card" style="max-width: 500px; margin: 0 auto; text-align: center;">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: var(--space-3);">
+        <h3 class="card-title" style="font-size: var(--step-2);">${contactData.name}</h3>
+        <div class="contact-row">
+          <span class="contact-icon"><img src="${contactData.locationIcon}" alt="Location" style="width: 24px; height: 24px; vertical-align: middle;"></span>
+          <span>${contactData.location}</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-icon"><img src="${contactData.phoneIcon}" alt="Phone" style="width: 24px; height: 24px; vertical-align: middle;"></span>
+          <a href="tel:${contactData.phone.replace(/[^\d]/g,'')}" class="contact-link">${contactData.phone}</a>
+          <button type="button" class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: var(--step--1); margin-left: 0.5rem;" onclick="navigator.clipboard.writeText('${contactData.phone}')">Copy</button>
+        </div>
+        <div class="contact-row">
+          <span class="contact-icon"><img src="${contactData.emailIcon}" alt="Email" style="width: 24px; height: 24px; vertical-align: middle;"></span>
+          <a href="mailto:${contactData.email}" class="contact-link">${contactData.email}</a>
+          <button type="button" class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: var(--step--1); margin-left: 0.5rem;" onclick="navigator.clipboard.writeText('${contactData.email}')">Copy</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 // Mobile navigation toggle
 document.addEventListener('DOMContentLoaded', function() {
   const navToggle = document.querySelector('.nav-toggle');
@@ -235,5 +271,6 @@ document.addEventListener('DOMContentLoaded', function() {
   renderSkills();
   renderExperience();
   renderActivities();
+  renderContact(); // Add this call
 });
 
