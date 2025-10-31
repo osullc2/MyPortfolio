@@ -56,6 +56,31 @@ img, svg, video { display: block; max-width: 100%; height: auto; }
 button, input, select, textarea { font: inherit; color: inherit; }
 a { color: inherit; text-decoration: none; }
 
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js-reveal { transition: none; opacity: 1; transform: none; }
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--color-accent);
+  color: #0b0d12;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-1);
+  z-index: 1000;
+}
+.skip-link:focus { left: 1rem; top: 1rem; }
+
 /* Containers */
 .container {
   width: min(100% - 2rem, var(--container-max));
