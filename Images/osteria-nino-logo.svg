@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
-  <rect width="120" height="120" rx="12" fill="#121621"/>
-  <path d="M20 80 C40 40, 80 40, 100 80" stroke="#b49bff" stroke-width="6" fill="none"/>
-  <text x="60" y="30" font-size="14" text-anchor="middle" fill="#9aa3b2">Osteria Nino</text>
-</svg>
-

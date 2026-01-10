@@ -4,7 +4,7 @@ const projectsData = [
     title: "Wordle Network Programming",
     subtitle: "C • POSIX Threads • TCP",
     description: "Single-process, multi-threaded TCP server for the Wordle game using POSIX threads, custom app-layer protocol, and dynamic memory management with synchronization.",
-    image: "Images/project-wordle.svg",
+    image: "Images/wordle.png",
     imageAlt: "Wordle Network Programming project",
     badges: ["C", "Pthreads", "Networking"]
   },
@@ -12,7 +12,7 @@ const projectsData = [
     title: "Epidemic Spread Simulation",
     subtitle: "Java • Multithreading • Graphs",
     description: "Multithreaded simulation of infection spread on large graphs with real-time stats, configurable parameters, and multiple infection strategies (random, degree-based, BFS).",
-    image: "Images/project-epidemic.svg",
+    image: "Images/project-epidemic.png",
     imageAlt: "Epidemic Spread Simulation project",
     badges: ["Java", "Graphs", "Concurrency"]
   },
@@ -20,7 +20,7 @@ const projectsData = [
     title: "EastieUnits.com (In-Progress)",
     subtitle: "React • Node.js/Express",
     description: "Website for a property management company to showcase available units and streamline communication between tenants and the property manager. Est. completion: Spring 2026.",
-    image: "Images/project-eastieunits.svg",
+    image: "Images/eastie.jpeg",
     imageAlt: "EastieUnits.com web app",
     badges: ["React", "Express", "Node.js"]
   }
@@ -54,7 +54,7 @@ const experienceData = [
     title: "Software Engineer Intern",
     company: "Charles River Development, State Street",
     period: "June – August 2025",
-    logo: "Images/crd-logo.svg",
+    logo: "Images/Logo_CharlesRiver.png",
     logoAlt: "Charles River Development logo",
     points: [
       "Contributed to migration toward a next-gen open-source automated testing framework safeguarding systems managing $50T+ in assets.",
@@ -67,7 +67,7 @@ const experienceData = [
     title: "Software Engineer Intern",
     company: "Ultimate Kronos Group (UKG)",
     period: "January – April 2025",
-    logo: "Images/ukg-logo.svg",
+    logo: "Images/UKG_Logo.svg",
     logoAlt: "UKG logo",
     points: [
       "Built and optimized UI components and backend services powering core product features.",
@@ -79,7 +79,7 @@ const experienceData = [
     title: "Server, Food Runner",
     company: "Osteria Nino Restaurant",
     period: "August 2020 – August 2024",
-    logo: "Images/osteria-nino-logo.svg",
+    logo: "Images/nino.jpg",
     logoAlt: "Osteria Nino logo",
     points: [
       "Delivered high-quality service at a high-end Italian restaurant in a fast-paced environment."
