@@ -92,19 +92,25 @@ const activitiesData = [
     title: "President, Men's Club Soccer",
     period: "November 2023 – Present",
     description: "Lead team operations, scheduling, and university coordination.",
-    badges: ["Leadership", "Team Management"]
+    badges: ["Leadership", "Team Management"],
+    image: "Images/mcs.jpg",
+    imageAlt: "Men's Club Soccer"
   },
   {
     title: "Exec Committee, Pi Kappa Alpha",
     period: "April 2023 – April 2024",
     description: "Supported chapter leadership and event planning initiatives.",
-    badges: ["Operations", "Event Planning"]
+    badges: ["Operations", "Event Planning"],
+    image: "Images/pka.jpg",
+    imageAlt: "Pi Kappa Alpha"
   },
   {
     title: "Member, RCOS",
     period: "January 2023 – Present",
     description: "RCOS is a program where students collaborate on open-source projects from conception to deployment, working in development teams to plan, implement, review, and ship features end-to-end.",
-    badges: ["Open Source", "Team Development", "Deployment"]
+    badges: ["Open Source", "Team Development", "Deployment"],
+    image: "Images/rcos.png",
+    imageAlt: "Rensselaer Center for Open Source"
   }
 ];
 
@@ -167,15 +173,13 @@ function renderExperience() {
   
   container.innerHTML = experienceData.map(exp => `
     <div class="timeline-item">
-      <div class="card">
+      <div class="card experience-card">
+        <img src="${exp.logo}" alt="${exp.logoAlt}" class="company-logo" />
         <div class="card-header">
           <h3 class="card-title">${exp.title}</h3>
           <p class="card-subtitle">${exp.company} • ${exp.period}</p>
         </div>
         <div class="card-content">
-          <div class="experience-meta">
-            <img src="${exp.logo}" alt="${exp.logoAlt}" class="company-logo" />
-          </div>
           <ul class="experience-points">
             ${exp.points.map(point => `<li>${point}</li>`).join('')}
           </ul>
@@ -190,7 +194,10 @@ function renderActivities() {
   if (!container) return;
   
   container.innerHTML = activitiesData.map(activity => `
-    <div class="card">
+    <div class="card activity-card">
+      <div class="activity-media">
+        <img src="${activity.image}" alt="${activity.imageAlt}" />
+      </div>
       <div class="card-header">
         <h3 class="card-title">${activity.title}</h3>
         <p class="card-subtitle">${activity.period}</p>
